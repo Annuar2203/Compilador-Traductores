@@ -36,6 +36,10 @@ def tokens_string(tokens):
     return resultado
 
 def main(page: ft.Page):
+
+    
+    page.window_maximized = True
+    
     page.title = "Analizador Léxico de Python"
 
     # Campo de texto para mostrar el contenido del archivo
