@@ -3,7 +3,7 @@ import tokenize #utilizada para trabajar con tokens
 import io #trabaja con datos de entrada y salida
 
 def analizar_codigo_python(codigo):
-    codigo_python = io.StringIO(codigo) #Utilizado para extraer el texto de un archivo, en este caso .py
+    codigo_python = io.StringIO(codigo) #Utilizado para extraer el texto de un archivo y retornar linea por linea
     tokens = [] #usado para guardar tokens
 
     try:
@@ -36,10 +36,9 @@ def tokens_string(tokens):
     return resultado
 
 def main(page: ft.Page):
-
     
     page.window_maximized = True
-    
+
     page.title = "Analizador Léxico de Python"
 
     # Campo de texto para mostrar el contenido del archivo
@@ -82,7 +81,7 @@ def main(page: ft.Page):
     # Campo para subir archivos
     file_picker = ft.FilePicker(on_result=manejar_archivo)
     
-    # Asegurarse de que el file_picker esté en la overlay, es decir, para que este disponible y visible
+    # Asegurarse de que el file_picker esté en el overlay, es decir, para que este disponible y visible
     page.overlay.append(file_picker)
     
     # Botón para activar el diálogo de carga de archivos
