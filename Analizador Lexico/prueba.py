@@ -89,7 +89,7 @@ def main(page: ft.Page):
         text="Subir Archivo Python",
         on_click=lambda _: file_picker.pick_files( #devuelve un solo archivo
             allow_multiple=False,
-            allowed_extensions=["py"]
+            allowed_extensions=["py"] # Solo permite archivos python
         )
     )
     
